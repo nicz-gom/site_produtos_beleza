@@ -1,0 +1,203 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Kapakana", cursive;
+
+    /*Cores*/
+    --barra_pesq: #A695A7;
+    --fundo_img : #D9D9D9;
+    --fontes    : #4A2D57;
+    --fontsDivs : #FFFFFF;
+    --fundoPag  : #C8A2A4;
+    --actionHove: #ffffff;
+    --tempo     : 0.3s;
+    --escala    : 1.07;
+    --botaoBorda: 100px;
+
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+#principal{
+    height: 100%;
+    width: 100%;
+    background-image: url("/img/sb06.jpg");
+    background-size: cover;
+}
+
+#navegar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px; 
+    position: fixed;  
+    z-index: 9;
+    box-shadow: 0px 0px 100px 0px;
+}
+
+#navegar > #barraNavegacoes{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    background-color: var(--barra_pesq);
+}
+
+#navegar > #barraNavegacoes > #linkWhatsapp > #whatsapp{
+    width: 35px;
+    height: 35px;
+    transition: var(--tempo);
+}
+
+#navegar > #barraNavegacoes > #linkWhatsapp > #whatsapp:hover{
+    transform: scale(var(--escala));
+}
+
+#navegar > #barraNavegacoes > .opcao{
+    height: 40px;
+    width: 98px;
+    border-radius: var(--botaoBorda);
+    transition: var(--tempo);
+    font-family: "Noto Serif", serif;
+    font-size: 18px;
+    font-weight: 200;
+    color: var(--fontes);
+}
+
+.opcao:hover{
+    transform: scale(var(--escala));
+    background-color: var(--actionHove);
+    cursor: pointer;
+    border: 1.2px solid var(--fontes);
+}
+
+#principal > #info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#principal > #info > #campoBrancoOpaco{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 70%;
+    width: 80%;
+    border-radius: 10px;
+    background-color: #ffffff80;
+}
+
+#perfilImg{
+    height: 200px;
+    border-radius: 10px;
+    transition: var(--tempo);
+    box-shadow: 0px 2px 20px 0px;
+}
+
+#perfilImg:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 0px 10px 0px;
+}
+
+#circulo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 280px;
+    width: 280px;
+    border-radius: 200px;
+    background-color: var(--fundo_img);
+    transition: var(--tempo);
+    box-shadow: 0px 1px 50px 0px;
+}
+
+#circulo:hover{
+    transform: scale(var(--escala));
+    box-shadow: 0px 0px 15px 0px;
+    height: 270px;
+    width: 270px;
+    cursor: default;
+}
+
+#circulo > h1{
+    cursor: default;
+    font-size: 90px;
+    font-weight: 400;
+    text-shadow: #000 10px 0px 15px;
+    text-wrap: nowrap;
+    text-align: center;
+    width: 400px;
+    border-bottom: 2px solid var(--fontes);
+    color: var(--fontes);
+}
+
+#sobre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--fundoPag);
+    height: 87%;
+    width: 100%;
+}
+
+#sobre > #tituloPag > p{
+    color: var(--fontsDivs);
+}
+
+#sobre > #imageSobre > .campo > div > p{ 
+    color: var(--fontsDivs);
+}
+
+#tituloPag{
+    text-align: center;
+}
+
+#tituloPag > h1{
+    color: var(--fontes);
+    border-bottom: 1px solid var(--fontes);
+}
+
+#imageSobre{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.campo{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.campo_imagem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--fundo_img);
+    height: 180px;
+    border-radius: 500%;
+}
+
+.campo > div > h1{
+    color: var(--fontes);
+    border-bottom:1px solid var(--fontes);
+}
