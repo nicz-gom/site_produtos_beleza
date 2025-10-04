@@ -6,7 +6,7 @@
   font-family: "Kapakana", cursive;
 
   /*Cores*/
-  --barra_pesq: #a695a7;
+  --barra_pesq: #877788;
   --fundo_img: #d9d9d9;
   --fontes: #4a2d57;
   --fontes2: #a16abb;
@@ -15,20 +15,32 @@
   --actionHove: #ffffff;
   --tempo: 0.3s;
   --escala: 1.07;
-  --botaoBorda: 100px;
+  --botaoBorda: 10px;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  height: 100dvh;
-  width: 100dvw;
+  width: 100%;
+  overflow-x: hidden; /* remove qualquer sobra horizontal */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /*ÂNCORAS*/
 
 #principal {
-  height: 100%;
   width: 100%;
-  background-image: url("/img/sb06.jpg");
+  height: 100vh;
+  background-image: url("/img/sabonete.png");
   background-size: cover;
 }
 
@@ -37,10 +49,9 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 70px;
+  height: 45px;
   position: fixed;
   z-index: 9;
-  box-shadow: 1px 1px 20px 0.5px;
 }
 
 #navegar > #barraNavegacoes {
@@ -53,8 +64,8 @@ body {
 }
 
 #navegar > #barraNavegacoes > #linkWhatsapp > #whatsapp {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   transition: var(--tempo);
 }
 
@@ -63,12 +74,12 @@ body {
 }
 
 #navegar > #barraNavegacoes > .opcao {
-  height: 40px;
-  width: 98px;
+  height: 30px;
+  width: 100px;
   border-radius: var(--botaoBorda);
   transition: var(--tempo);
   font-family: "Noto Serif", serif;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 200;
   color: var(--fontes);
 }
@@ -152,7 +163,7 @@ body {
   align-items: center;
   justify-content: space-around;
   background-color: var(--fundoPag);
-  height: 87%;
+  height: 100vh;
   width: 100%;
 }
 
@@ -183,11 +194,11 @@ body {
 
 #imageSobre {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  height: 80%;
-  width: 100%;
   justify-content: center;
+  width: 100%;
+  gap: 20px; /* espaço entre os blocos */
 }
 
 .campo {
@@ -197,6 +208,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 260px;
 }
 
 .campo_imagem {
@@ -258,4 +270,42 @@ a {
 .campo > div > h1 {
   color: var(--fontes);
   border-bottom: 1px solid var(--fontes);
+}
+
+/*PRODUTOS*/
+#produtos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--fundoPag);
+  height: 100vh;
+}
+
+#produtos > .carrossel > .cartao {
+  flex: 0 0 10em;
+  height: 12em;
+  padding: 1em;
+  border-radius: 0.5em;
+  text-align: center;
+  align-content: center;
+}
+
+.carrossel {
+  width: 100%;
+  overflow-x: auto;
+  margin: 0;
+  display: flex;
+  gap: 1em;
+}
+
+.carrossel::-webkit-scrollbar {
+  display: none;
+}
+
+.carrossel::scroll-button(right) {
+  content: "⭢";
+}
+
+.carrossel::scroll-button(left) {
+  content: "⭠";
 }
