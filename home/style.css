@@ -73,9 +73,9 @@ img {
   transform: scale(var(--escala));
 }
 
-#navegar > #barraNavegacoes > .opcao {
-  height: 47px;
-  width: 100px;
+#navegar > #barraNavegacoes > ul > li > a .opcao {
+  width: 80px;
+  height: 40px;
   border-radius: var(--botaoBorda);
   transition: var(--tempo);
   font-family: "Noto Serif", serif;
@@ -91,22 +91,24 @@ img {
   align-items: center;
   width: 90%;
   height: 100%;
+  list-style: none;
 }
 
-#barraNevegacoes > ul > li {
+#barraNavegacoes > ul > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 90%;
-  list-style: decimal;
   height: 100%;
 }
 
-#barraNevegacoes > ul > li::marker {
-  marker: none;
-}
-
-#barraNevegacoes > ul > li > a {
+#barraNavegacoes > ul > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  height: 100%;
   width: 90%;
+  height: 100%;
 }
 
 .opcao:hover {
@@ -130,7 +132,7 @@ img {
   align-items: center;
   justify-content: space-around;
   height: 70%;
-  width: 80%;
+  width: 90%;
   margin: auto;
   border-radius: 10px;
   background-color: #ffffff80;
@@ -149,6 +151,7 @@ img {
   margin: 10%;
   text-align: center;
   font-size: 2em;
+  color: var(--fontes2);
 }
 
 #perfilImg:hover {
@@ -172,8 +175,6 @@ img {
 #circulo:hover {
   transform: scale(var(--escala));
   box-shadow: 0px 0px 15px 0px;
-  height: 270px;
-  width: 270px;
   cursor: default;
 }
 
@@ -187,6 +188,11 @@ img {
   width: 400px;
   border-bottom: 2px solid var(--fontes);
   color: var(--fontes);
+  transition: var(--tempo);
+}
+
+#circulo > h1:hover {
+  font-size: 82px;
 }
 
 /*SOBRE*/
@@ -316,21 +322,33 @@ a {
   height: 100vh;
 }
 
+#produtos > h1 {
+  color: var(--fontes);
+  width: 10%;
+  text-align: center;
+  border-bottom: 1px solid var(--fontes);
+}
+
 #produtos > .carrossel > .cartao {
   flex: 0 0 10em;
   height: 12em;
   padding: 1em;
-  border-radius: 0.5em;
+  border-radius: 30px;
   text-align: center;
   align-content: center;
   scroll-snap-align: start;
+  transition: var(--tempo);
+}
+
+.cartao:hover {
+  transform: scale(var(--escala));
 }
 
 .carrossel {
   width: 100%;
   overflow-x: auto;
   margin: 0;
-  border: 150px solid var(--fundoPag);
+  border: 130px solid var(--fundoPag);
   display: flex;
   gap: 1em;
   scroll-behavior: smooth;
@@ -358,12 +376,12 @@ a {
 
 .carrossel::scroll-button(right) {
   content: "⭢";
-  right: 6%;
+  right: 4.5%;
 }
 
 .carrossel::scroll-button(left) {
   content: "⭠";
-  left: 6%;
+  left: 4.5%;
 }
 
 .carrossel::scroll-button(right):disabled,
