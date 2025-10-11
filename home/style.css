@@ -49,7 +49,7 @@ img {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 45px;
+  height: 65px;
   position: fixed;
   z-index: 9;
 }
@@ -64,8 +64,8 @@ img {
 }
 
 #navegar > #barraNavegacoes > #linkWhatsapp > #whatsapp {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   transition: var(--tempo);
 }
 
@@ -74,7 +74,7 @@ img {
 }
 
 #navegar > #barraNavegacoes > .opcao {
-  height: 30px;
+  height: 47px;
   width: 100px;
   border-radius: var(--botaoBorda);
   transition: var(--tempo);
@@ -82,6 +82,31 @@ img {
   font-size: 17px;
   font-weight: 200;
   color: var(--fontes);
+}
+
+#barraNavegacoes > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+}
+
+#barraNevegacoes > ul > li {
+  width: 90%;
+  list-style: decimal;
+  height: 100%;
+}
+
+#barraNevegacoes > ul > li::marker {
+  marker: none;
+}
+
+#barraNevegacoes > ul > li > a {
+  text-decoration: none;
+  height: 100%;
+  width: 90%;
 }
 
 .opcao:hover {
@@ -106,15 +131,24 @@ img {
   justify-content: space-around;
   height: 70%;
   width: 80%;
+  margin: auto;
   border-radius: 10px;
   background-color: #ffffff80;
 }
 
 #perfilImg {
-  height: 200px;
+  width: 100%;
+  max-width: 130px;
   border-radius: 10px;
   transition: var(--tempo);
+  margin: auto;
   box-shadow: 0px 2px 20px 0px;
+}
+
+#perfil > p {
+  margin: 10%;
+  text-align: center;
+  font-size: 2em;
 }
 
 #perfilImg:hover {
@@ -277,6 +311,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: var(--fundoPag);
   height: 100vh;
 }
@@ -288,24 +323,57 @@ a {
   border-radius: 0.5em;
   text-align: center;
   align-content: center;
+  scroll-snap-align: start;
 }
 
 .carrossel {
   width: 100%;
   overflow-x: auto;
   margin: 0;
+  border: 150px solid var(--fundoPag);
   display: flex;
   gap: 1em;
+  scroll-behavior: smooth;
 }
 
 .carrossel::-webkit-scrollbar {
   display: none;
 }
 
+.carrossel::scroll-button(right),
+.carrossel::scroll-button(left) {
+  border: none;
+  background-color: var(--fontes);
+  font-size: 1rem;
+  color: var(--actionHove);
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  padding-bottom: 0.1em;
+  cursor: pointer;
+  position: absolute;
+  top: 248%;
+  transition: var(--tempo);
+}
+
 .carrossel::scroll-button(right) {
   content: "⭢";
+  right: 6%;
 }
 
 .carrossel::scroll-button(left) {
   content: "⭠";
+  left: 6%;
+}
+
+.carrossel::scroll-button(right):disabled,
+.carrossel::scroll-button(left):disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
+.carrossel::scroll-button(right):hover,
+.carrossel::scroll-button(left):hover {
+  background-color: var(--fontes2);
+  transform: scale(var(--escala));
 }
