@@ -395,3 +395,87 @@ a {
   background-color: var(--fontes2);
   transform: scale(var(--escala));
 }
+
+/*SERVICOS*/
+#servicos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--fundoPag);
+  height: 100vh;
+}
+
+#servicos > h1 {
+  color: var(--fontes);
+  width: 10%;
+  text-align: center;
+  border-bottom: 1px solid var(--fontes);
+}
+
+#servicos > .carrossel_servcos > .cartao_servicos {
+  flex: 0 0 10em;
+  height: 12em;
+  padding: 1em;
+  border-radius: 30px;
+  text-align: center;
+  align-content: center;
+  scroll-snap-align: start;
+  transition: var(--tempo);
+}
+
+.cartao_servicos:hover {
+  transform: scale(var(--escala));
+}
+
+.carrossel_servcos {
+  width: 100%;
+  overflow-x: auto;
+  margin: 0;
+  border: 130px solid var(--fundoPag);
+  display: flex;
+  gap: 1em;
+  scroll-behavior: smooth;
+}
+
+.carrossel_servcos::-webkit-scrollbar {
+  display: none;
+}
+
+.carrossel_servcos::scroll-button(right),
+.carrossel_servcos::scroll-button(left) {
+  border: none;
+  background-color: var(--fontes);
+  font-size: 1rem;
+  color: var(--actionHove);
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  padding-bottom: 0.1em;
+  cursor: pointer;
+  position: absolute;
+  top: 248%;
+  transition: var(--tempo);
+}
+
+.carrossel_servcos::scroll-button(right) {
+  content: "⭢";
+  right: 4.5%;
+}
+
+.carrossel_servcos::scroll-button(left) {
+  content: "⭠";
+  left: 4.5%;
+}
+
+.carrossel_servcos::scroll-button(right):disabled,
+.carrossel_servcos::scroll-button(left):disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
+.carrossel_servcos::scroll-button(right):hover,
+.carrossel_servcos::scroll-button(left):hover {
+  background-color: var(--fontes2);
+  transform: scale(var(--escala));
+}
